@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skeleton-Based Exercise Quality Assessment Under Domain Shift</title>
+<meta name="description" content="A benchmark study of cross-domain failure modes in skeleton-based exercise quality assessment. 77.8% of out-of-distribution transfer experiments exhibit classifier collapse. MCHM 2026, ACM Multimedia 2026.">
+
+<link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=Source+Serif+4:ital@1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<!-- ============================= HERO ============================= -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Benchmark Study &middot; Cross-Domain Failure Analysis</p>
+
+    <h1 class="title">Skeleton-Based Exercise Quality Assessment Under Domain Shift: A Benchmark Study of Cross-Domain Failure Modes</h1>
+
+    <p class="authors">
+      <span class="author"><a href="#">Monica Vahdati</a><sup>1</sup></span><span class="sep">&middot;</span><span class="author"><a href="#">Kamran Gholizadeh HamlAbadi</a><sup>1</sup></span><span class="sep">&middot;</span><span class="author"><a href="#">Ali Etemad</a><sup>2</sup></span><span class="sep">&middot;</span><span class="author"><a href="#">Abdulmotaleb El Saddik</a><sup>1</sup></span>
+    </p>
+
+    <p class="affiliations">
+      <sup>1</sup>University of Ottawa &nbsp; &nbsp; <sup>2</sup>Queen&rsquo;s University
+    </p>
+
+    <p class="venue-meta">MCHM &rsquo;26 &mdash; The 3rd International Workshop on Multimedia Computing for Health and Medicine, co-located with ACM Multimedia 2026 &nbsp;&middot;&nbsp; November 10&ndash;14, 2026 &nbsp;&middot;&nbsp; Rio de Janeiro, Brazil</p>
+
+    <!-- ---------------------- Resource buttons ---------------------- -->
+    <div class="buttons-row">
+      <a id="btn-paper" class="resource-btn" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 16h6M9 10h2"/></svg>
+        Paper
+      </a>
+      <a id="btn-arxiv" class="resource-btn ghost" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 15l3-7 2 5 1.5-3L16 15"/></svg>
+        arXiv
+      </a>
+      <a id="btn-code" class="resource-btn ghost" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 18c-4.5 1.5-4.5-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        Code
+      </a>
+      <a id="btn-model" class="resource-btn ghost" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M8 12h.01M12 12h.01M16 12h.01M8 16h8"/></svg>
+        Model
+      </a>
+    </div>
+
+    <p class="doi-line">DOI: <a id="doi-link" href="#" target="_blank" rel="noopener">10.1145/3840471.3842592</a></p>
+  </div>
+</header>
+
+<!-- ============================= ABSTRACT ============================= -->
+<section class="abstract">
+  <div class="wrap">
+    <p class="eyebrow">Abstract</p>
+    <p>
+      Skeleton-based models for exercise quality assessment score well when trained and tested on the same recording setup, but it is unclear whether they hold up once deployment moves across laboratory, clinical, motion-capture, and web-video domains. We benchmark this question directly: <strong>4 exercise datasets</strong>, <strong>9 skeleton-based models</strong> spanning GCN and transformer architectures, and <strong>198 out-of-distribution transfer experiments</strong>. The result is that <strong>154 of 198 OOD experiments (77.8%)</strong> exhibit full or partial classifier collapse &mdash; the model settles on one class almost regardless of input, a failure that overall accuracy and macro-F1 do not reveal on their own.
+    </p>
+  </div>
+</section>
+
+<!-- ============================= MAIN FIGURE ============================= -->
+<section class="pipeline">
+  <div class="wrap-wide">
+    <p class="eyebrow">Overview</p>
+    <h2 class="section-title">Cross-Domain Exercise Quality Assessment</h2>
+    <div class="figure-card">
+      <img src="static/images/pipeline.png" alt="Benchmark pipeline: four cross-dataset inputs are unified into an 18-joint skeleton representation, passed through a suite of six GCN and three transformer models, evaluated under IID, OOD, and Mixed protocols, and scored with failure-aware evaluation that detects classifier collapse.">
+    </div>
+    <p class="figure-caption">Four datasets &mdash; EC3D, REHAB24, Custom YouTube, and UI-PRMD &mdash; are unified under one 18-joint preprocessing protocol, evaluated across nine skeleton models, and scored with a failure-aware protocol that inspects per-class prediction counts rather than aggregate accuracy alone.</p>
+  </div>
+</section>
+
+<!-- ============================= MAIN FINDING ============================= -->
+<section class="finding">
+  <div class="wrap">
+    <p class="eyebrow">Main Result</p>
+    <h2 class="section-title">Cross-Domain Collapse Is the Main Failure Mode</h2>
+
+    <div class="stat-block">
+      <div class="stat-number">77.8%</div>
+      <p class="stat-caption"><strong>154 of 198</strong> OOD transfer experiments exhibit full or partial classifier collapse.</p>
+    </div>
+
+    <div class="chart-wrap" style="margin-top:40px;">
+      <img src="static/images/collapse.png" alt="Stacked bar showing 141 full-collapse, 13 partial-collapse, and 44 genuine-transfer outcomes out of 198 OOD experiments.">
+    </div>
+
+    <div class="collapse-defs">
+      <div class="def"><strong>Full Collapse (FC)</strong>One class receives zero predictions across the entire test set.</div>
+      <div class="def"><strong>Partial Collapse (PC)</strong>One class receives five or fewer predictions &mdash; at most ~3.6% class coverage.</div>
+    </div>
+
+    <blockquote class="callout">
+      A model can report a non-zero F1 score while effectively predicting almost every sample as the same class.
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============================= MODELS ============================= -->
+<section class="models">
+  <div class="wrap">
+    <p class="eyebrow">Architecture Comparison</p>
+    <h2 class="section-title">Newer Architectures Do Not Solve Domain Shift</h2>
+
+    <div class="model-grid">
+      <div>
+        <span class="model-col-label gcn">GCN &middot; 6 models</span>
+        <ul class="model-list">
+          <li>ST-GCN</li><li>CTR-GCN</li><li>InfoGCN</li>
+          <li>HD-GCN</li><li>BlockGCN</li><li>ProtoGCN</li>
+        </ul>
+      </div>
+      <div>
+        <span class="model-col-label tf">Transformer &middot; 3 models</span>
+        <ul class="model-list">
+          <li>SkateFormer</li><li>HyperFormer</li><li>FreqMixFormer</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="chart-wrap">
+      <img src="static/images/model_collapse_rate.png" alt="Bar chart of collapse rate by model, ranging from 63.64% to 90.91% across the 22 OOD conditions.">
+    </div>
+
+    <p class="finding-line">
+      Mean OOD macro-F1 clusters tightly across all nine models &mdash; <strong>32.6% to 36.7%</strong>. Only <strong>1 of 36</strong> pairwise comparisons is significant before correction, and <strong>none remain significant</strong> after Bonferroni correction.
+    </p>
+
+    <div class="chart-wrap" style="margin-top:32px;">
+      <img src="static/images/model_results.png" alt="Bar chart of mean OOD macro-F1 per model, clustered between 32.59% and 36.70%.">
+    </div>
+
+    <blockquote class="callout" style="margin-top:36px;">
+      Architecture family alone does not reliably predict cross-domain robustness.
+    </blockquote>
+  </div>
+</section>
+
+<!-- ============================= DATA DIVERSITY ============================= -->
+<section class="diversity">
+  <div class="wrap">
+    <p class="eyebrow">Pooled Training</p>
+    <h2 class="section-title">Data Diversity Helps &mdash; But It Is Not Unseen-Domain Generalization</h2>
+
+    <div class="diversity-row">
+      <div class="diversity-stat">
+        <div class="n">0</div>
+        <div class="l">collapsed models in Mixed&nbsp;D1</div>
+      </div>
+      <div class="diversity-stat">
+        <div class="n">91.4%</div>
+        <div class="l">best result &mdash; InfoGCN</div>
+      </div>
+      <div class="diversity-stat">
+        <div class="n">4</div>
+        <div class="l">domains pooled in training</div>
+      </div>
+    </div>
+
+    <p class="warning-note">
+      <strong>Mixed D1 pools data from all four domains</strong> before splitting into train / val / test, so it should not be read as generalization to an unseen domain &mdash; it shows the task is learnable given broad coverage, not that transfer to a truly novel recording environment is solved.
+    </p>
+  </div>
+</section>
+
+<!-- ============================= BIBTEX ============================= -->
+<section class="bibtex">
+  <div class="wrap-wide">
+    <p class="eyebrow">Citation</p>
+    <h2 class="section-title">BibTeX</h2>
+    <div class="bibtex-box">
+      <button id="copy-bibtex" class="copy-btn" type="button">Copy</button>
+      <pre id="bibtex-text">@inproceedings{vahdati2026skeleton,
+  author    = {Monica Vahdati and
+               Kamran Gholizadeh HamlAbadi and
+               Ali Etemad and
+               Abdulmotaleb El Saddik},
+  title     = {Skeleton-Based Exercise Quality Assessment Under Domain Shift:
+               A Benchmark Study of Cross-Domain Failure Modes},
+  booktitle = {The 3rd International Workshop on Multimedia Computing for Health and Medicine},
+  series    = {MCHM '26},
+  year      = {2026},
+  location  = {Rio de Janeiro, Brazil},
+  publisher = {Association for Computing Machinery},
+  isbn      = {979-8-4007-2925-6/2026/11},
+  doi       = {10.1145/3840471.3842592}
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= FOOTER ============================= -->
+<footer>
+  <div class="wrap">
+    <p class="venue">MCHM 2026 &middot; ACM Multimedia 2026</p>
+    <p>Website template inspired by the Perceptually Accurate 3D Talking Head Generation / Nerfies academic project-page style.</p>
+  </div>
+</footer>
+
+<script src="static/js/index.js"></script>
+</body>
+</html>
