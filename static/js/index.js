@@ -1,11 +1,10 @@
 // ---------------------------------------------------------------
-// Resource links — edit these four values to point at the live
-// paper, arXiv preprint, code repository, and model checkpoints.
+// Resource links. Leave a value empty ("") to hide its button.
 // ---------------------------------------------------------------
-const PAPER_URL = "ACM_PAPER_URL";
-const ARXIV_URL = "ARXIV_URL";
-const CODE_URL = "GITHUB_CODE_URL";
-const MODEL_URL = "HUGGINGFACE_URL";
+const PAPER_URL = "https://dl.acm.org/doi/10.1145/3840471.3842592";
+const ARXIV_URL = "";
+const CODE_URL = "https://github.com/MonicaVahd/FAIRCoachOOD";
+const MODEL_URL = "";
 const DOI_URL = "https://doi.org/10.1145/3840471.3842592";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,7 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   Object.keys(links).forEach(function (id) {
     var el = document.getElementById(id);
-    if (el) el.setAttribute("href", links[id]);
+    if (!el) return;
+    if (links[id]) {
+      el.setAttribute("href", links[id]);
+    } else {
+      el.style.display = "none";
+    }
   });
 
   var btn = document.getElementById("copy-bibtex");
