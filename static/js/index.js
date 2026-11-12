@@ -4,7 +4,7 @@
 const PAPER_URL = "https://dl.acm.org/doi/10.1145/3840471.3842592";
 const ARXIV_URL = "";
 const CODE_URL = "https://github.com/MonicaVahd/FAIRCoachOOD";
-const MODEL_URL = "https://huggingface.co/collections/MonicaVahd/skeletoneqa-ood-benchmark-weights";
+const MODEL_URL = "https://huggingface.co/collections/MonicaVahd/skeletoneqa-ood-benchmark-weights"; 
 const DOI_URL = "https://doi.org/10.1145/3840471.3842592";
 
 document.addEventListener("DOMContentLoaded", function () {
